@@ -29,6 +29,7 @@ application.locals.entries = entries;
 /* ========================== MIDDLEWARE ========================== */
 /* ================================================================ */
 
+application.use(express.static(path.resolve(__dirname, 'public')));
 /* Uses Morgan to log every request */
 application.use(logger('dev'));
 /* Populates a variable called request.body if the user is submitting a form */
@@ -44,7 +45,7 @@ application.get('/', (request, response) => {
 });
 
 /* Renders the 'new entry' page */
-application.get('/new-enty', (request, response) => {
+application.get('/new-entry', (request, response) => {
     response.render('new-entry');
 });
 
@@ -69,7 +70,7 @@ application.post('/new-entry', (request, response) => {
 
 /* Renders a 404 page 'cause you're requesting an unknown source */
 application.use((request, response) => {
-    response.status(404).render('not-found');
+    response.status(404).render('404');
 })
 
 /* ================================================================ */
