@@ -2,9 +2,9 @@
   "name": "guestbook",
   "version": "1.0.0",
   "description": "A component from a bygone era: the guestbook",
-  "main": "server.js",
+  "main": "application.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon --watch application.js"
   },
   "keywords": [],
   "author": "",
