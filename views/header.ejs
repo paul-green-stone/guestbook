@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+    <title>Guestbook |<%= title %></title>
+      
+    <!-- Include Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> 
+      
+    <!-- Generate favicon (use home icon by default) -->
+    <link rel="icon" href="<%= icon %>" type="image/png" />
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="padding: 0 1rem;">
+        <div class="navbar-brand is-flex is-align-items-center" style="flex: 1;">
+          <!-- Brand name, visible on all screens, linked to home -->
+          <a class="navbar-item" href="/" style="font-size: 1.5rem; font-weight: bold;">
+            Express Guestbook
+          </a>
+          <!-- Small Add button, visible only on small screens, placed to the left -->
+          <a class="navbar-item is-hidden-desktop" href="/new-entry">
+            <button class="button is-primary is-small">
+              <span class="icon is-small">
+                <i class="fas fa-plus"></i>
+              </span>
+              <span>Add</span>
+            </button>
+          </a>
+          <!-- Optional: Add a spacer if needed -->
+        </div>
+        <!-- Big Add button on the left for larger screens -->
+        <div class="navbar-end is-hidden-touch" style="margin-left: auto;">
+          <div class="navbar-item">
+            <a href="/new-entry" class="button is-primary">
+              <span class="icon">
+                <i class="fas fa-plus"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Add a separator between the navbar and the rest of the content -->
+    <hr class="navbar-divider" />
+
+    <!-- Rest of the content goes here -->

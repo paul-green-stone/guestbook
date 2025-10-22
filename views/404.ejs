@@ -1,0 +1,23 @@
+<%- include('header', {title: 'Not Found', icon: '/images/not-found.png'}) -%>
+
+<div class="main-content">
+  <section class="section is-flex is-flex-direction-column is-align-items-center is-justify-content-center" style="height: 100%;">
+    <div class="container has-text-centered">
+      <div class="box is-shadowless" style="max-width: 500px;">
+        <h1 class="title is-size-1 has-text-danger has-text-centered mb-4">
+          404
+        </h1>
+        <h2 class="subtitle is-size-4 mb-4">Oops! The page you're looking for doesn't exist.</h2>
+        <p class="mb-4">It might have been moved or deleted. Sorry about that!</p>
+        <a href="/" class="button is-primary is-medium is-rounded">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+          <span>Go Home</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%- include('footer') -%>

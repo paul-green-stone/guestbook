@@ -1,0 +1,90 @@
+<%- include('header', {title: 'Home', icon: 'images/home.png'}) -%>
+
+<section class="section" style="padding: 2rem;">
+  <div class="container">
+    <% if (entries.length) { %>
+      <% entries.forEach((entry) => { %>
+        <div class="box entry-box" style="margin-bottom: 1.5rem;">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h2 class="title is-4 is-flex is-justify-content-space-between title-entry">
+                  <span><%= entry.title %></span>
+                  <small class="has-text-grey is-size-6 date-entry">
+                    <%= entry.published %>
+                  </small>
+                </h2>
+                <!-- Separator after title and date -->
+                <hr class="separator" />
+                <!-- Content paragraph -->
+                <p class="entry-content"><%= entry.content %></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <div class="has-text-centered no-entries" style="margin-top: 3rem;">
+        <figure class="image is-inline-block mb-3" style="width: 64px; height: 64px;">
+          <img src="https://img.icons8.com/ios/100/cccccc/empty-box.png" alt="No entries" />
+        </figure>
+        <p class="title is-5 has-text-grey">No entries yet!</p>
+        <a class="button is-primary is-light" href="/new-entry" style="margin-top: 1rem;">
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>Add your first entry</span>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('footer') -%>
+
+<!-- Custom styles for enhanced look -->
+<style>
+  /* Style for each entry box with shadow and hover effect */
+  .entry-box {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .entry-box:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Style for the separator line */
+  .separator {
+    margin: 1rem 0;
+    border-color: #e0e0e0;
+  }
+
+  /* Style for the title to make it stand out */
+  .title-entry {
+    font-weight: 600;
+  }
+
+  /* Style for the date to subtly differentiate */
+  .date-entry {
+    font-style: italic;
+  }
+
+  /* Style for the no-entries message container */
+  .no-entries {
+    padding: 2rem;
+  }
+
+  /* Optional: add a gentle background color to the section for contrast */
+  section {
+    background-color: #fafafa;
+  }
+
+  /* Make the button hover more engaging */
+  .button.is-primary.is-light:hover {
+    background-color: #3273dc;
+    color: #fff;
+  }
+</style>

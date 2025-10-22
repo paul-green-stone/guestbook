@@ -1,0 +1,77 @@
+<%- include('header', {title: 'New Entry', icon: '/images/add.png'}) -%>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-4 has-text-centered mb-4">New Entry</h2>
+
+    <div class="box" style="max-width: 600px; margin: 0 auto; padding: 2rem;">
+      <form action="" method="post" role="form">
+        <!-- Floating label with right-side "H" -->
+        <div class="field">
+            <div class="control has-icons-right">
+            <input class="input is-focus" type="text" id="title" name="title" placeholder=" " required />
+            <label class="floating-label" for="title">Title</label>
+            <span class="icon is-small is-right">
+                <i class="fas fa-heading"></i>
+              </span>
+            </div>
+        </div>
+
+        <!-- Floating label for Entry text -->
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea is-focus" id="body" name="body" placeholder=" " rows="3" required></textarea>
+            <label class="floating-label" for="body">Entry text</label>
+          </div>
+        </div>
+
+        <!-- Submit button with hover effect -->
+        <div class="field is-grouped is-justify-content-center">
+          <div class="control">
+            <button class="button is-primary is-hoverable" type="submit">Post</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') -%>
+
+<!-- Add custom styles for floating labels -->
+<style>
+  .floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-out;
+    background: white;
+    padding: 0 4px;
+    font-size: 0.9rem;
+    color: #7a7a7a;
+  }
+
+  /* Animate label on focus or when input has text */
+  input:focus + .floating-label,
+  input:not(:placeholder-shown) + .floating-label,
+  textarea:focus + .floating-label,
+  textarea:not(:placeholder-shown) + .floating-label {
+    top: -8px;
+    font-size: 0.75rem;
+    color: #3273dc; /* Bulma primary color */
+  }
+
+  /* To position icons inside input fields properly */
+  .has-icons-left .input {
+    padding-left: 2.5em;
+  }
+
+  /* Button hover effect (optional, Bulma has default hover, but you can customize) */
+  .button.is-hoverable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+  }
+</style>
